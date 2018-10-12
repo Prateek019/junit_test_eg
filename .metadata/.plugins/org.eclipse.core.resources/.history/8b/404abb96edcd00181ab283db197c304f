@@ -1,0 +1,38 @@
+package com.db.junit.test;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.util.List;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import com.db.junit.Customer;
+
+public class CustomerTest {
+
+	private Connection ct;
+	private Customer cobj;
+	
+	@BeforeClass
+	public static void createConnection() {
+		
+		Class.forName("com.mysql.jdbc.Driver");
+		
+		DriverManager.getConnection("jdbc:mysql://localhost/testdbb", "user", "password")
+	}
+	@Test
+	List<String> lstc = cobj.getCustomers();
+	
+	//String strrs[]=(String [])lstc.toArray();
+	String strrs[]=new String[lstc.size()];
+	strrs[0]=lstc.get(0);
+	Assert.assertArrayEquals(strrs, new String[] {"abcd","pqrs","lmno"});
+	
+	@Test
+	public void testGetCustomer() {
+		List<String> lstc = cobj.getCustomers();
+		
+		System.out.println(lstc);
+	}
+}

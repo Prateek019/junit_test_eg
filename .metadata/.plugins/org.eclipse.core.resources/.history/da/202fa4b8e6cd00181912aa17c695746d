@@ -1,0 +1,20 @@
+package com.db.junit.test;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+import org.junit.BeforeClass;
+
+public class CustomerTest {
+
+	private Connection ct;
+	
+	@BeforeClass
+	public static void createConnection() {
+		
+		Class.forName("com.mysql.jdbc.Driver");
+		
+		DriverManager.getConnection("", "user", "password")
+	}
+	
+}

@@ -1,0 +1,14 @@
+package com.db.junit.testSuit;
+
+import org.junit.runners.Suite;
+
+import com.db.junit.CustomerTest2;
+import com.db.junit.test.CustomerTest;
+
+@Suite.SuiteClasses({
+	CustomerTest.class,
+	CustomerTest2.class
+})
+public class sampleJunitTestSuite {
+
+}

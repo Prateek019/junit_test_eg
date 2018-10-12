@@ -1,0 +1,26 @@
+package junit;
+
+import java.sql.Connection;
+import java.util.List;
+
+import com.mysql.jdbc.PreparedStatement;
+
+public class Customer {
+	//retrieve list of Customer
+	
+	private Connection ct;
+	
+	public Customer(Connection ct) {
+	
+		this.ct=ct;
+	}
+	List<Customer> getCustomers(){
+		PreparedStatement ps = ct.prepareStatement("SELECT name FROM customer ");
+	
+		
+		
+		
+		return null;
+	}
+	
+}

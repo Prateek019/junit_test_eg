@@ -1,0 +1,37 @@
+package com.db.junit.test;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.List;
+
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import com.db.junit.Customer;
+
+public class CustomerTest {
+
+	private Connection ct;
+	private Customer cobj;
+	
+	@BeforeClass
+	public static void createConnection() throws ClassNotFoundException, SQLException {
+		
+		Class.forName("com.mysql.jdbc.Driver");
+		
+		DriverManager.getConnection("jdbc:mysql://localhost/testdbb", "user", "password");
+	}
+	
+	
+
+	@Test
+	public void testgetCustomers() throws SQLException
+	{
+		List<String> lstc = cobj.getCustomers();
+		String[] v3 = lstc.toArray(new String[lstc.size()]);
+		Assert.assertArrayEquals(v3, new String[] {"param","vir","yolo"});
+		System.out.println(lstc);
+	}
+}

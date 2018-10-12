@@ -1,0 +1,27 @@
+package junit;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
+
+
+
+public class Customer {
+	//retrieve list of Customer
+	
+	private Connection ct;
+	
+	public Customer(Connection ct) {
+	
+		this.ct=ct;
+	}
+	List<Customer> getCustomers() throws SQLException{
+		java.sql.PreparedStatement ps = ct.prepareStatement("SELECT name FROM customer ");
+	
+		
+		
+		
+		return null;
+	}
+	
+}

@@ -1,0 +1,9 @@
+package com.db.junit.test;
+
+import org.junit.BeforeClass;
+
+public class CustomerTest {
+
+	@Be
+	
+}

@@ -1,0 +1,5 @@
+package com.db.junit.test;
+
+public class CustomerTest {
+
+}
